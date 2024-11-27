@@ -1,6 +1,12 @@
 const hiddenMessage = document.getElementById('hiddenMessage');
 const wordContainer = document.getElementById('wordContainer');
 
+const popupCont = document.querySelector('.popupContainer');
+const popup = document.getElementById('popup');
+const noButton = document.getElementById('noButton');
+const yesButton = document.getElementById('yesButton');
+let timeoutId;
+
 // Track the revealed key words
 let revealedCount = 0;
 
@@ -44,33 +50,27 @@ wordContainer.addEventListener('click', (e) => {
           clickedWord.remove();
         }, 1000);
 
-        // targetWord.style.fontWeight = 'bold'
-        // targetWord.style.opacity = 1;
-        // targetWord.style.color = "#FF69B4";
-        targetWord.classList.add("show")
-
-        // Increment the revealed count
+        targetWord.classList.add("show");
         revealedCount++;
       }
     } else {
       // Make dummy word vanish
-      e.target.style.boxShadow = '0 0 20px rgba(255, 50, 50, 0.7)'
+      e.target.style.boxShadow = '0 0 20px rgba(255, 50, 50, 0.7)';
       e.target.classList.add('shake'); // Add the shake class
       setTimeout(() => {
         e.target.classList.remove('shake'); // Remove the class after animation ends
       }, 500);
       e.target.classList.add('vanish');
       setTimeout(() => {
-        e.target.remove()
+        e.target.remove();
       }, 1000);
     }
 
     // Check if all key words are revealed
     const totalKeyWords = hiddenMessage.querySelectorAll('.hidden-word[data-key]').length;
     if (revealedCount === totalKeyWords) {
-
+      // Run the remaining code to reveal the hidden message
       document.querySelector('.divider').classList.add('vanish');
-      // Make all remaining dummy words vanish
       [...wordContainer.querySelectorAll('.word[data-key="false"]')].forEach((dummy) => {
         dummy.classList.add('vanish');
         setTimeout(() => dummy.remove(), 500);
@@ -78,24 +78,38 @@ wordContainer.addEventListener('click', (e) => {
 
       setTimeout(() => {
         hiddenMessage.classList.add('revealed');
+        popupCont.classList.add("show")
       }, 1000);
 
-      // Reveal non-key words in the hidden message
-      setTimeout(() => {
-        [...hiddenMessage.children].forEach((span) => {
-          span.style.visibility = 'visible';
-          span.style.opacity = 1;
-        });
-      }, 3000);
+      yesButton.addEventListener('click', () => {
+        popupCont.classList.add('hide');
+        console.log(popupCont.classList)
+        setTimeout(() => {
+          [...hiddenMessage.children].forEach((span) => {
+            span.style.visibility = 'visible';
+            span.style.opacity = 1;
+          });
+        }, 1000);
+      });
     }
   }
 });
 
-const button = document.getElementById('shake-button');
+noButton.addEventListener('mouseenter', () => {
+  const randomX = Math.floor(Math.random() * 200 - 100); // Random X position
+  const randomY = Math.floor(Math.random() * 200 - 100); // Random Y position
 
-button.addEventListener('click', () => {
-  button.classList.add('shake'); // Add the shake class
-  setTimeout(() => {
-    button.classList.remove('shake'); // Remove the class after animation ends
-  }, 500); // Match the duration of the animation
+  noButton.style.setProperty('--x', `${randomX}px`);
+  noButton.style.setProperty('--y', `${randomY}px`);
+  noButton.classList.add('smooth-move');
+
+  clearTimeout(timeoutId);
+});
+
+noButton.addEventListener('mouseleave', () => {
+  // Set a timeout to bring the button back after 5 seconds
+  timeoutId = setTimeout(() => {
+    noButton.style.setProperty('--x', 0);
+    noButton.style.setProperty('--y', 0);
+  }, 2000); // 5 seconds of inactivity before resetting
 });

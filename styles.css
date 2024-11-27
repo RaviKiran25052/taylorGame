@@ -32,7 +32,7 @@ body {
  
  .desktop-only .message {
 	color: #fff;
-	animation: fade-in 2s ease-in-out infinite alternate;
+	animation: fade-in-out 2s ease-in-out infinite alternate;
  }
 
  .song {
@@ -90,7 +90,7 @@ body {
 	  #7c00a5 50%, 
 	  #ff00c8 80%);
 	background-size: 200%;
-	-webkit-background-clip: text;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	animation: shine 3s linear infinite;
 }
@@ -198,7 +198,7 @@ body {
  }
  
  /* Animations */
- @keyframes fade-in {
+ @keyframes fade-in-out {
 	from {
 	  opacity: 0.7;
 	}
@@ -214,4 +214,102 @@ body {
 	to {
 	  transform: scale(1.1);
 	}
+ }
+
+ .popupContainer {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	background: #000000aa;
+ }
+ .popup {
+	position: relative;
+	border-radius: 12px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.2); /* Shiny effect */
+	text-align: center;
+	padding: 30px;
+	animation: fade-in 0.5s ease-in-out;
+	position: relative;
+	background: linear-gradient(to bottom right, #1e1e1e, #070707);
+	z-index: 1000;
+	overflow: hidden;
+ }
+
+ /* Shiny reflective effect */
+ .popup:before {
+	content: "";
+	position: absolute;
+	top: 10%;
+	left: 0;
+	right: 0;
+	bottom: 10%;
+	background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
+	transform: rotate(45deg);
+	opacity: 0.5;
+	z-index: -1;
+ }
+
+ @keyframes fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+ }
+
+ /* Popup Show and Hide Animations */
+ .popupContainer.show {
+	display: flex;
+ }
+
+ .popupContainer.hide {
+	animation: fade-out 0.5s forwards;
+ }
+
+ @keyframes fade-out {
+	from { opacity: 1; }
+	to { opacity: 0; }
+ }
+
+ /* Popup Text */
+ .popup p {
+	font-size: 20px;
+	margin: 20px 0;
+	color: #ecf0f1;
+ }
+
+ /* Button Styles */
+ .popup button {
+	margin: 10px;
+	padding: 15px 30px;
+	font-size: 16px;
+	cursor: pointer;
+	border: none;
+	background-color: #007BFF;
+	color: white;
+	border-radius: 10px;
+	transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ #yesButton {
+	background-color: #00b32d;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+ }
+ #yesButton:hover {
+	transform: translateY(-5px);
+ }
+
+ /* No Button Movement Styles */
+ #noButton {
+	position: relative;
+	transition: transform 0.5s ease, background-color 0.3s ease;
+	background-color: #e74c3c;
+	box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+ }
+
+ #noButton.smooth-move {
+	transform: translate(var(--x, 0px), var(--y, 0px));
  }
