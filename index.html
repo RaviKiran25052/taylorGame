@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Reveal the Key Words Game</title>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+	<div class="desktop-only">
+		<div class="message">
+			<h1>LOOK WHAT YOU MADE ME DO! 🐍</h1>
+			<p>This project is <span class="song">DELICATE</span> 🦋 and won't work on Tiny Screens</p>
+			<p><span class="song">BEGIN AGAIN</span> ♻️, To get the full <span class="song">STYLE</span> 💃🏻 of this project in Bigger Screen.</p>
+			<p>[ Trust me, it's worth it. ]</p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="hidden-message" id="hiddenMessage">
+			<span class="hidden-word">I</span>
+			<span class="hidden-word">may</span>
+			<span class="hidden-word">not</span>
+			<span class="hidden-word">be</span>
+			<span class="hidden-word">Travis</span>
+			<span class="hidden-word">Kelce,</span>
+			<span class="hidden-word">but</span>
+			<span class="hidden-word">you</span>
+			<span class="hidden-word">are</span>
+			<span class="hidden-word">my</span>
+			<span data-key="TAYLOR SWIFT" class="hidden-word">TAYLOR SWIFT</span>
+			<span class="hidden-word">,</span>
+			<span class="hidden-word">and</span>
+			<span class="hidden-word">I'll</span>
+			<span data-key="FOREVER & ALWAYS" class="hidden-word">FOREVER & ALWAYS</span>
+			<span class="hidden-word">be</span>
+			<span class="hidden-word">your</span>
+			<span class="hidden-word">biggest</span>
+			<span class="hidden-word">fan,</span>
+			<span class="hidden-word">cheering</span>
+			<span class="hidden-word">for</span>
+			<span class="hidden-word">you</span>
+			<span class="hidden-word">through</span>
+			<span class="hidden-word">every</span>
+			<span class="hidden-word">moment</span>
+			<span class="hidden-word">of</span>
+			<span class="hidden-word">life.</span>
+			<span class="hidden-word"><br /></span>
+			<div class="custom-br"></div>
+			<span class="hidden-word">With</span>
+			<span class="hidden-word">you,</span>
+			<span class="hidden-word">life</span>
+			<span class="hidden-word">feels</span>
+			<span class="hidden-word">like</span>
+			<span class="hidden-word">a</span>
+			<span data-key="LOVE STORY" class="hidden-word">LOVE STORY</span>
+			<span class="hidden-word">written</span>
+			<span class="hidden-word">in</span>
+			<span class="hidden-word">the</span>
+			<span data-key="MIDNIGHT" class="hidden-word">MIDNIGHT</span>
+			<span class="hidden-word">stars,</span>
+			<span data-key="BEJEWELED" class="hidden-word">BEJEWELED</span>
+			<span class="hidden-word">and</span>
+			<span class="hidden-word">shining</span>
+			<span class="hidden-word">brighter</span>
+			<span class="hidden-word">than</span>
+			<span data-key="DAYLIGHT" class="hidden-word">DAYLIGHT</span>
+			<span class="hidden-word">.</span>
+			<span class="hidden-word"><br /></span>
+			<div class="custom-br"></div>
+			<span class="hidden-word">You</span>
+			<span class="hidden-word">are</span>
+			<span data-key="GORGEOUS" class="hidden-word">GORGEOUS</span>
+			<span class="hidden-word">,</span>
+			<span class="hidden-word">and</span>
+			<span class="hidden-word">from</span>
+			<span class="hidden-word">the</span>
+			<span class="hidden-word">moment</span>
+			<span class="hidden-word">I</span>
+			<span class="hidden-word">saw</span>
+			<span class="hidden-word">you,</span>
+			<span class="hidden-word">my</span>
+			<span data-key="RED" class="hidden-word">RED</span>
+			<span class="hidden-word">blooded</span>
+			<span class="hidden-word">heart</span>
+			<span class="hidden-word">became</span>
+			<span data-key="FEARLESS" class="hidden-word">FEARLESS</span>
+			<span class="hidden-word">,</span>
+			<span class="hidden-word">knowing</span>
+			<span class="hidden-word">you</span>
+			<span class="hidden-word">were</span>
+			<span data-key="MINE" class="hidden-word">MINE</span>
+			<span class="hidden-word">,</span>
+			<span class="hidden-word">the</span>
+			<span class="hidden-word">love</span>
+			<span class="hidden-word">I've</span>
+			<span class="hidden-word">been</span>
+			<span class="hidden-word">waiting</span>
+			<span class="hidden-word">for.</span>
+			<span class="hidden-word"><br /></span>
+			<div class="custom-br"></div>
+			<span class="hidden-word">With</span>
+			<span class="hidden-word">you,</span>
+			<span data-key="HAPPINESS" class="hidden-word">HAPPINESS</span>
+			<span class="hidden-word">feels</span>
+			<span class="hidden-word">real,</span>
+			<span class="hidden-word">like</span>
+			<span class="hidden-word">I'm</span>
+			<span class="hidden-word">truly</span>
+			<span class="hidden-word">the</span>
+			<span data-key="THE LUCKY ONE" class="hidden-word">THE LUCKY ONE</span>
+			<span class="hidden-word">,</span>
+			<span class="hidden-word">because</span>
+			<span class="hidden-word">with</span>
+			<span class="hidden-word">you,</span>
+			<span data-key="EVERYTHING HAS CHANGED" class="hidden-word">EVERYTHING HAS CHANGED</span>
+			<span class="hidden-word">.</span>
+			<span class="hidden-word"><br /></span>
+			<div class="custom-br"></div>
+			<span class="hidden-word">There's</span>
+			<span class="hidden-word">no</span>
+			<span data-key="BAD BLOOD" class="hidden-word">BAD BLOOD</span>
+			<span class="hidden-word">between</span>
+			<span class="hidden-word">us,</span>
+			<span class="hidden-word">only</span>
+			<span class="hidden-word">the</span>
+			<span class="hidden-word">pull</span>
+			<span class="hidden-word">of</span>
+			<span class="hidden-word">fate,</span>
+			<span class="hidden-word">as</span>
+			<span data-key="EVERGREEN" class="hidden-word">EVERGREEN</span>
+			<span class="hidden-word">as</span>
+			<span class="hidden-word">the</span>
+			<span data-key="WILLOW" class="hidden-word">WILLOW</span>
+			<span class="hidden-word">,</span>
+			<span class="hidden-word">growing</span>
+			<span class="hidden-word">deeper</span>
+			<span class="hidden-word">with</span>
+			<span class="hidden-word">every</span>
+			<span class="hidden-word">moment</span>
+			<span class="hidden-word">I</span>
+			<span class="hidden-word">spend</span>
+			<span class="hidden-word">with</span>
+			<span class="hidden-word">you.</span>
+			<span class="hidden-word"><br /></span>
+			<div class="custom-br"></div>
+			<span class="hidden-word">I'll</span>
+			<span class="hidden-word">stand</span>
+			<span class="hidden-word">by</span>
+			<span class="hidden-word">you</span>
+			<span class="hidden-word">in</span>
+			<span class="hidden-word">your</span>
+			<span data-key="DELICATE" class="hidden-word">DELICATE</span>
+			<span class="hidden-word">moments</span>
+			<span class="hidden-word">and</span>
+			<span class="hidden-word">the</span>
+			<span data-key="ENDGAME" class="hidden-word">ENDGAME</span>
+			<span class="hidden-word">of</span>
+			<span class="hidden-word">your</span>
+			<span class="hidden-word">life,</span>
+			<span class="hidden-word">completing</span>
+			<span class="hidden-word">every</span>
+			<span data-key="BLANK SPACE" class="hidden-word">BLANK SPACE</span>
+			<span class="hidden-word">with</span>
+			<span data-key="ME" class="hidden-word">ME</span>
+			<span class="hidden-word">!</span>
+			<span class="hidden-word"><br /></span>
+			<div class="custom-br"></div>
+			<span data-key="SPEAK NOW" class="hidden-word">SPEAK NOW</span>
+			<span class="hidden-word">--</span>
+			<span class="hidden-word">are</span>
+			<span class="hidden-word">you</span>
+			<span data-key="READY FOR IT" class="hidden-word">READY FOR IT</span>
+			<span class="hidden-word">?</span>
+			<span class="hidden-word">will</span>
+			<span class="hidden-word">you</span>
+			<span class="hidden-word">be</span>
+			<span class="hidden-word">my</span>
+			<span data-key="LOVER" class="hidden-word">LOVER</span>
+			<span class="hidden-word">for</span>
+			<span class="hidden-word">all</span>
+			<span class="hidden-word">our</span>
+			<span data-key="MIDNIGHTS" class="hidden-word">MIDNIGHTS</span>
+			<span class="hidden-word">together,</span>
+			<span class="hidden-word">living</span>
+			<span class="hidden-word">an</span>
+			<span data-key="EVERMORE" class="hidden-word">EVERMORE</span>
+			<span class="hidden-word">of</span>
+			<span class="hidden-word">love,</span>
+			<span class="hidden-word">with</span>
+			<span class="hidden-word">you</span>
+			<span class="hidden-word">by</span>
+			<span class="hidden-word">my</span>
+			<span class="hidden-word">side,</span>
+			<span class="hidden-word">and</span>
+			<span class="hidden-word">make</span>
+			<span class="hidden-word">my</span>
+			<span data-key="WILDEST DREAMS" class="hidden-word">WILDEST DREAMS</span>
+			<span class="hidden-word">come</span>
+			<span class="hidden-word">true?</span>
+		</div>
+
+		<div class="divider"></div>
+
+		<div class="word-container" id="wordContainer">
+			<span class="word" data-key="false">HEARTLESS</span>
+			<span class="word" data-key="true">LOVE STORY</span>
+			<span class="word" data-key="false">AFTER HOURS</span>
+			<span class="word" data-key="true">RED</span>
+			<span class="word" data-key="true">FEARLESS</span>
+			<span class="word" data-key="true">MIDNIGHT</span>
+			<span class="word" data-key="false">FADED</span>
+			<span class="word" data-key="true">GORGEOUS</span>
+			<span class="word" data-key="true">BEJEWELED</span>
+			<span class="word" data-key="false">MONEY</span>
+			<span class="word" data-key="true">THE LUCKY ONE</span>
+			<span class="word" data-key="true">SPEAK NOW</span>
+			<span class="word" data-key="true">TAYLOR SWIFT</span>
+			<span class="word" data-key="true">ME</span>
+			<span class="word" data-key="false">SKYFALL</span>
+			<span class="word" data-key="true">LOVER</span>
+			<span class="word" data-key="true">HAPPINESS</span>
+			<span class="word" data-key="false">BAD GUY</span>
+			<span class="word" data-key="true">DAYLIGHT</span>
+			<span class="word" data-key="true">WILLOW</span>
+			<span class="word" data-key="false">SHALLOW</span>
+			<span class="word" data-key="true">EVERMORE</span>
+			<span class="word" data-key="false">CLOSER</span>
+			<span class="word" data-key="true">FOREVER & ALWAYS</span>
+			<span class="word" data-key="true">EVERYTHING HAS CHANGED</span>
+			<span class="word" data-key="true">WILDEST DREAMS</span>
+			<span class="word" data-key="false">ESPRESSO</span>
+			<span class="word" data-key="true">BAD BLOOD</span>
+			<span class="word" data-key="true">ENDGAME</span>
+			<span class="word" data-key="false">SORRY</span>
+			<span class="word" data-key="true">DELICATE</span>
+			<span class="word" data-key="true">BLANK SPACE</span>
+			<span class="word" data-key="true">MINE</span>
+			<span class="word" data-key="false">PERFECT</span>
+			<span class="word" data-key="true">READY FOR IT</span>
+			<span class="word" data-key="false">STARBOY</span>
+			<span class="word" data-key="true">MIDNIGHTS</span>
+			<span class="word" data-key="true">EVERGREEN</span>
+
+			<!-- Dummy words (song names not part of the hidden message) -->
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

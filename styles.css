@@ -1,0 +1,217 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #121212;
+	color: white;
+	text-align: center;
+	padding: 0px;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+
+.title {
+	font-size: 20px;
+	text-align: center;
+	margin: 20px 0;
+	display: none;
+}
+.desktop-only {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(120deg, #ff00c8, #38004a);
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	text-align: center;
+ }
+ 
+ .desktop-only .message {
+	color: #fff;
+	animation: fade-in 2s ease-in-out infinite alternate;
+ }
+
+ .song {
+	font-weight: bold;
+ }
+ 
+ .desktop-only h1 {
+	font-size: 2rem;
+	margin: 2rem;
+	animation: scale-up 2s ease-in-out infinite alternate;
+ }
+ 
+ .desktop-only p {
+	font-size: 1rem;
+	margin: 1rem;
+ }
+.container {
+	display: grid;
+	grid-template-columns: 1fr 3px 1fr;
+	align-items: center;
+	margin: 20px;
+	/* height: 100vh; */
+}
+
+.hidden-message {
+	/* display: flex;
+	flex-wrap: wrap;
+	flex: 1;
+	gap: 10px; */
+	line-height: 25px;
+	position: relative;
+	font-size: 14px;
+	text-align:justify;
+	margin: 0 20px;
+	transition: transform 1s ease-in-out, opacity 1s ease;
+}
+ 
+.custom-br {
+	display: block;
+	height: 14px;
+	width: 100%;
+}
+
+.hidden-message.revealed {
+	visibility: visible;
+	opacity: 1;
+	transform: translateX(50%);
+}
+
+.hidden-word.show {
+	font-weight: bold;
+	opacity: 1;
+	background: linear-gradient(120deg, 
+	  #ff00c8 20%, 
+	  #7c00a5 50%, 
+	  #ff00c8 80%);
+	background-size: 200%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: shine 3s linear infinite;
+}
+.hidden-word {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s ease-in-out;
+}
+ 
+.word-container {
+	padding-left: 20px;
+	transition: all 0.3s ease;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 15px 20px;
+}
+ 
+.word {
+	display: inline-block;
+	background: #1e1e1e;
+	padding: 8px 20px;
+	border-radius: 20px;
+	color: white;
+	font-size: 14px;
+	cursor: pointer;
+	transition: transform 0.3s, opacity 0.5s;
+	box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+	transition: opacity 0.5s, transform 0.3s, margin 0.3s;
+	position: relative;
+}
+ 
+.word:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+ 
+.vanish {
+	animation: vanish 0.5s forwards;
+	transition: opacity 0.5s, transform 0.3s, margin 0.3s;
+}
+ 
+@keyframes vanish {
+	100% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+}
+ 
+@keyframes moveToPosition {
+	0% {
+		opacity: 1;
+		transform: scale(1) translate(0, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) translate(0, 0);
+	}
+}
+ 
+.divider {
+	width: 3px;
+	background-color: #ccc;
+	height: 90vh;
+}
+
+@keyframes shake {
+	0%, 100% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(-5px);
+	}
+	50% {
+		transform: translateX(5px);
+	}
+	75% {
+		transform: translateX(-5px);
+	}
+}
+ 
+@keyframes shine {
+  0% {
+	 background-position: 0%;
+  }
+  100% {
+	 background-position: 200%;
+  }
+}
+
+.shake {
+	box-shadow: 0 0 10px rgba(255, 99, 99, 0.7);
+	animation: shake 0.5s ease;
+}
+
+@media (max-width: 1024px) {
+	.desktop-only {
+	  display: flex;
+	}
+ 
+	.container {
+	  display: none;
+	}
+ }
+ 
+ /* Animations */
+ @keyframes fade-in {
+	from {
+	  opacity: 0.7;
+	}
+	to {
+	  opacity: 1;
+	}
+ }
+ 
+ @keyframes scale-up {
+	from {
+	  transform: scale(1);
+	}
+	to {
+	  transform: scale(1.1);
+	}
+ }
