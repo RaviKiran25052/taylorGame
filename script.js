@@ -75,34 +75,55 @@ wordContainer.addEventListener('click', (e) => {
         dummy.classList.add('vanish');
         setTimeout(() => dummy.remove(), 500);
       });
-
+      
       setTimeout(() => {
         hiddenMessage.classList.add('revealed');
         popupCont.classList.add("show")
       }, 1000);
-
+      
       yesButton.addEventListener('click', () => {
         popupCont.classList.add('hide');
-        console.log(popupCont.classList)
+        audio.play();
         setTimeout(() => {
           [...hiddenMessage.children].forEach((span) => {
             span.style.visibility = 'visible';
             span.style.opacity = 1;
           });
-        }, 1000);
+        }, 1500);
       });
     }
   }
 });
 
+const positions = [
+  { x: 110, y: 30 },
+  { x: 110, y: -90 },
+  { x: -50, y: -90 },
+  { x: -220, y: 30 },
+  { x: -220, y: -90 }
+];
+const audio = document.getElementById('backgroundMusic');
+let currentX = null;
+let currentY = null;
+
 noButton.addEventListener('mouseenter', () => {
-  const randomX = Math.floor(Math.random() * 200 - 100); // Random X position
-  const randomY = Math.floor(Math.random() * 200 - 100); // Random Y position
-
-  noButton.style.setProperty('--x', `${randomX}px`);
-  noButton.style.setProperty('--y', `${randomY}px`);
+  let randomIndex;
+  let newPosition;
+  
+  // Keep picking a new position until it's different from the current one
+  do {
+    randomIndex = Math.floor(Math.random() * positions.length);
+    newPosition = positions[randomIndex];
+  } while (newPosition.x === currentX && newPosition.y === currentY);
+  
+  // Update the CSS variables
+  currentX = newPosition.x;
+  currentY = newPosition.y;
+  
+  noButton.style.setProperty('--x', `${currentX}px`);
+  noButton.style.setProperty('--y', `${currentY}px`);
   noButton.classList.add('smooth-move');
-
+  
   clearTimeout(timeoutId);
 });
 
