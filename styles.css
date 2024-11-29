@@ -77,23 +77,23 @@ body {
 	/* font-weight: bold; */
 }
 
-.hidden-word.show {
-	font-weight: bold;
+.hidden-word {
+	/* visibility: hidden; */
+	color: #121212;
+	transition: visibility 0s, opacity 0.5s ease-in-out;
 	opacity: 1;
+}
+
+.hidden-word.show {
 	background: linear-gradient(120deg, 
 	  #ff00c8 20%, 
 	  #7c00a5 50%, 
 	  #ff00c8 80%);
 	background-size: 200%;
-	/* text-shadow: 0.5px 0.5px 1px #000; */
 	background-clip: text;
+	font-weight: bold;
 	-webkit-text-fill-color: transparent;
 	animation: shine 3s linear infinite;
-}
-.hidden-word {
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 0s, opacity 0.5s ease-in-out;
 }
  
 .word-container {
@@ -103,7 +103,7 @@ body {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	gap: 15px 20px;
+	gap: 12px;
 }
  
 .word {
