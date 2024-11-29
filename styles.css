@@ -1,7 +1,6 @@
 body {
 	font-family: Arial, sans-serif;
 	background-color: #121212;
-	color: white;
 	text-align: center;
 	padding: 0px;
 	margin: 0;
@@ -54,17 +53,12 @@ body {
 	grid-template-columns: 1fr 3px 1fr;
 	align-items: center;
 	margin: 20px;
-	/* height: 100vh; */
 }
 
 .hidden-message {
-	/* display: flex;
-	flex-wrap: wrap;
-	flex: 1;
-	gap: 10px; */
 	line-height: 25px;
 	position: relative;
-	font-size: 14px;
+	font-size: 16px;
 	text-align:justify;
 	margin: 0 20px;
 	transition: transform 1s ease-in-out, opacity 1s ease;
@@ -80,6 +74,7 @@ body {
 	visibility: visible;
 	opacity: 1;
 	transform: translateX(50%);
+	/* font-weight: bold; */
 }
 
 .hidden-word.show {
@@ -90,6 +85,7 @@ body {
 	  #7c00a5 50%, 
 	  #ff00c8 80%);
 	background-size: 200%;
+	/* text-shadow: 0.5px 0.5px 1px #000; */
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	animation: shine 3s linear infinite;
@@ -116,7 +112,7 @@ body {
 	padding: 8px 20px;
 	border-radius: 20px;
 	color: white;
-	font-size: 14px;
+	font-size: 16px;
 	cursor: pointer;
 	transition: transform 0.3s, opacity 0.5s;
 	box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
@@ -312,4 +308,12 @@ body {
 
  #noButton.smooth-move {
 	transform: translate(var(--x, 0px), var(--y, 0px));
+ }
+ canvas {
+	z-index: -100;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
  }
