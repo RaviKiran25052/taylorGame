@@ -219,3 +219,25 @@ function tick(event) {
 	stage.update(event);
 }
 
+function calculateMonthsAndDays(startDate, endDate) {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+
+  let months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+  let days = end.getDate() - start.getDate();
+
+  if (days < 0) {
+    months--;
+    const previousMonth = new Date(end.getFullYear(), end.getMonth(), 0); // Last day of the previous month
+    days += previousMonth.getDate();
+  }
+
+  return { months, days };
+}
+
+const today = new Date();
+const startDate = "2024-05-30";
+const result = calculateMonthsAndDays(startDate, today);
+
+// Set the value in the HTML element
+document.getElementById("duration").textContent = `${result.months} months ${result.days} days,`;
