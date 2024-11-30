@@ -30,8 +30,8 @@ wordContainer.addEventListener('click', (e) => {
         const clickedRect = clickedWord.getBoundingClientRect();
 
         // Calculate the position difference
-        const diffX = rect.left - clickedRect.left - 12;
-        const diffY = rect.top - clickedRect.top - 6;
+        const diffX = rect.left - clickedRect.left - 20;
+        const diffY = rect.top - clickedRect.top - 8;
 
         // Move the clicked word to the target word's position
         clickedWord.style.position = 'absolute';

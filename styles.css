@@ -82,7 +82,9 @@ body {
 	transition: visibility 0s, opacity 0.5s ease-in-out;
 	opacity: 1;
 }
-
+.hidden-word[data-key] {
+	font-weight: bold;
+}
 .hidden-word.show {
 	background: linear-gradient(120deg, 
 	  #ff00c8 20%, 
@@ -91,7 +93,8 @@ body {
 	background-size: 200%;
 	background-clip: text;
 	font-weight: bold;
-	font-size: 16px;
+	word-spacing: -2px;
+	/* font-size: 16px; */
 	-webkit-text-fill-color: transparent;
 	animation: shine 3s linear infinite;
 }
@@ -112,7 +115,8 @@ body {
 	padding: 8px 20px;
 	border-radius: 20px;
 	color: white;
-	font-size: 16px;
+	font-size: 18px;
+	word-spacing: 2px;
 	cursor: pointer;
 	transition: transform 0.3s, opacity 0.5s;
 	box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
