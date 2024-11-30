@@ -30,8 +30,8 @@ wordContainer.addEventListener('click', (e) => {
         const clickedRect = clickedWord.getBoundingClientRect();
 
         // Calculate the position difference
-        const diffX = rect.left - clickedRect.left - 20;
-        const diffY = rect.top - clickedRect.top - 8;
+        const diffX = rect.left - clickedRect.left - 12;
+        const diffY = rect.top - clickedRect.top - 6;
 
         // Move the clicked word to the target word's position
         clickedWord.style.position = 'absolute';
@@ -159,7 +159,7 @@ function init() {
 	captureIndex = 0;
 
 	// create a large number of slightly complex vector shapes, and give them random positions and velocities:
-	for (var i = 0; i < 200; i++) {
+	for (var i = 0; i < 150; i++) {
 		var heart = new createjs.Shape();
 		heart.graphics.beginFill(createjs.Graphics.getHSL(330 + Math.random() * 30, 50 + Math.random() * 30, 75 + Math.random() * 10));
     // heart.graphics.beginFill(createjs.Graphics.getHSL(330 + Math.random() * 30, 50 + Math.random() * 30, 75 + Math.random() * 10));
