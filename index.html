@@ -10,13 +10,6 @@
 </head>
 
 <body>
-	<div class="popupContainer">
-		<div id="popup" class="popup">
-			<p>Do you want to see the hidden message?</p>
-			<button id="yesButton">Yes</button>
-			<button id="noButton" disabled>No</button>
-		</div>
-	</div>
 	<div class="desktop-only">
 		<div class="message">
 			<h1>LOOK WHAT YOU MADE ME DO! 🐍</h1>
@@ -26,7 +19,37 @@
 			<p>[ Trust me, it's worth it. ]</p>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container-card">
+		<button id="toggleButton" class="lock-button-toggle">🔒</button>
+		<div id="card" class="card-glass">
+			<div class="card-text-content">
+				<h2>Answer these to Unlock 🗝</h2>
+				<label for="contact-name">What was your name in my contacts?</label>
+				<input type="text" id="contact-name" placeholder="Enter your name">
+				<label for="date-picker">The day we first seen each other:</label>
+				<div class="card-date-picker-custom">
+					<select id="day">
+						<option value="" disabled selected>Day</option>
+					</select>
+					<select id="month">
+						<option value="" disabled selected>Month</option>
+					</select>
+					<select id="year">
+						<option value="" disabled selected>Year</option>
+					</select>
+				</div>
+			</div>
+			<button id="submit-btn">Submit</button>
+		</div>
+	</div>
+	<div class="popupContainer">
+		<div id="popup" class="popup">
+			<p>Do you want to see the hidden message?</p>
+			<button id="yesButton">Yes</button>
+			<button id="noButton" disabled>No</button>
+		</div>
+	</div>
+	<div class="container hidden-element" id="main-container">
 		<div class="hidden-message" id="hiddenMessage">
 			<span class="hidden-word">I</span>
 			<span class="hidden-word">may</span>

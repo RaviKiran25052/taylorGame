@@ -4,6 +4,10 @@ body {
 	text-align: center;
 	padding: 0px;
 	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
 }
 * {
 	box-sizing: border-box;
@@ -323,3 +327,178 @@ body {
 	width: 100%;
 	height: 100vh;
  }
+
+ .container-card {
+	position: relative;
+	width: 400px;
+	opacity: 1;
+	transition: opacity 1s ease-out, display 1s ease-out;
+}
+
+.lock-button-toggle {
+	position: absolute;
+	top: -30px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	color: #fff;
+	border: 2px solid #999;
+	background: #121212;
+	font-size: 28px;
+	cursor: pointer;
+	z-index: 2;
+	box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.lock-button-toggle:hover {
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.card-glass {
+	position: relative;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	transition: height 0.5s ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.card-text-content {
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+	margin: 20px 40px;
+	color: #fff;
+	text-align: center;
+}
+
+.card-glass h2 {
+	font-size: 24px;
+	margin: 0 0 30px;
+	text-align: left;
+}
+
+.card-glass label {
+	color: #ddd;
+	margin-bottom: 5px;
+	display: block;
+	text-align: left;
+}
+
+.card-glass input[type="text"] {
+	width: calc(100% - 20px);
+	margin: 10px 0 20px;
+	padding: 10px;
+	font-size: 14px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 8px;
+	outline: none;
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+}
+
+.card-glass input::placeholder {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.card-date-picker-custom {
+	display: flex;
+	justify-content: space-between;
+	gap: 5px;
+	margin-top: 10px;
+}
+
+.card-date-picker-custom select {
+	flex: 1;
+	padding: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 8px;
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	font-size: 14px;
+	outline: none;
+}
+
+.card-date-picker-custom select::-webkit-scrollbar {
+	display: none;
+}
+
+.card-date-picker-custom select option {
+	color: #000;
+}
+
+.card-glass button {
+	padding: 12px 24px;
+	font-size: 16px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-glass button:hover {
+	background-color: #0056b3;
+	transform: scale(1.05);
+}
+
+.card-glass button.left-button {
+	transform: translateX(-100%);
+}
+
+.card-glass button.right-button {
+	transform: translateX(100%);
+}
+
+.fade-out-effect {
+	display: none;
+}
+
+.fade-in-effect {
+	opacity: 1;
+	transition: opacity 1s ease-in;
+}
+
+.hidden-element {
+	display: none;
+}
+
+.new-message-content {
+	font-size: 24px;
+	color: green;
+	text-align: center;
+	padding: 50px;
+}
+
+.lock {
+	box-shadow: 0 0 10px rgba(255, 99, 99, 0.7);
+	border-color: red;
+	animation: lock 0.5s ease;
+}
+
+@keyframes lock {
+
+	0%,
+	100% {
+		transform: translateX(-50%);
+	}
+
+	25%, 75% {
+		transform: translateX(calc(-50% - 5px));
+	}
+
+	50% {
+		transform: translateX(calc(-50% + 5px));
+	}
+}
