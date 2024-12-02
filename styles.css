@@ -45,13 +45,14 @@ body {
  }
  
  .desktop-only h1 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	margin: 2rem;
 	animation: scale-up 2s ease-in-out infinite alternate;
  }
  
  .desktop-only p {
 	font-size: 1rem;
+	line-height: 30px;
 	margin: 1rem;
  }
 .container {
@@ -64,7 +65,7 @@ body {
 .hidden-message {
 	line-height: 25px;
 	position: relative;
-	font-size: 18px;
+	font-size: 17px;
 	text-align:justify;
 	margin: 0 20px;
 	transition: transform 1s ease-in-out, opacity 1s ease;
@@ -72,7 +73,7 @@ body {
  
 .custom-br {
 	display: block;
-	height: 8px;
+	height: 6px;
 	width: 100%;
 }
 
@@ -100,7 +101,7 @@ body {
 	background-clip: text;
 	font-weight: bold;
 	word-spacing: -2px;
-	/* font-size: 16px; */
+	/* font-size: 17px; */
 	-webkit-text-fill-color: transparent;
 	animation: shine 3s linear infinite;
 }
@@ -112,7 +113,7 @@ body {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	gap: 12px;
+	gap: 20px;
 }
  
 .word {
@@ -121,7 +122,7 @@ body {
 	padding: 8px 20px;
 	border-radius: 20px;
 	color: white;
-	font-size: 18px;
+	font-size: 17px;
 	word-spacing: 2px;
 	cursor: pointer;
 	transition: transform 0.3s, opacity 0.5s;
@@ -291,7 +292,7 @@ body {
  .popup button {
 	margin: 10px;
 	padding: 10px 30px;
-	font-size: 16px;
+	font-size: 17px;
 	cursor: pointer;
 	border: none;
 	background-color: #007BFF;
@@ -395,7 +396,7 @@ body {
 }
 
 .card-glass input[type="text"] {
-	width: calc(100% - 20px);
+	width: 100%;
 	margin: 10px 0 20px;
 	padding: 10px;
 	font-size: 14px;
@@ -413,7 +414,7 @@ body {
 .card-date-picker-custom {
 	display: flex;
 	justify-content: space-between;
-	gap: 5px;
+	gap: 10px;
 	margin-top: 10px;
 }
 
@@ -438,7 +439,7 @@ body {
 
 .card-glass button {
 	padding: 12px 24px;
-	font-size: 16px;
+	font-size: 17px;
 	background-color: #007bff;
 	color: white;
 	border: none;
@@ -472,13 +473,6 @@ body {
 
 .hidden-element {
 	display: none;
-}
-
-.new-message-content {
-	font-size: 24px;
-	color: green;
-	text-align: center;
-	padding: 50px;
 }
 
 .lock {

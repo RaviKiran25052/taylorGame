@@ -7,6 +7,19 @@ const noButton = document.getElementById('noButton');
 const yesButton = document.getElementById('yesButton');
 let timeoutId;
 
+function goFullScreen() {
+  const element = document.documentElement; // or use a specific element like document.body
+  if (element.requestFullscreen) {
+    element.requestFullscreen(); // For most browsers
+  } else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen(); // For Firefox
+  } else if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen(); // For Chrome, Safari and Opera
+  } else if (element.msRequestFullscreen) {
+    element.msRequestFullscreen(); // For IE/Edge
+  }
+}
+
 // Track the revealed key words
 let revealedCount = 0;
 
@@ -202,7 +215,7 @@ function tick(event) {
       heart.perX = (1 + Math.random() * 2) * h;
       heart.offX = Math.random() * h;
       heart.ampX = heart.perX * 0.1 * (0.15 + Math.random());
-      heart.velY = -Math.random() * 4 - 2; // INCREASED SPEED
+      heart.velY = -Math.random() * 6 - 4; // INCREASED SPEED
       heart.scale = Math.random() * 2 + 1;
       heart._rotation = Math.random() * 40 - 20;
       heart.alpha = Math.random() * 0.75 + 0.05;
@@ -315,7 +328,7 @@ function checkInputAndDate() {
   const selectedMonth = parseInt(monthSelect.value);
   const selectedYear = parseInt(yearSelect.value);
 
-  if ((name === 'taylor swift' || name === 'taylorswift') && selectedDay === 30 || 17 && selectedMonth === 5 || 7 && selectedYear === 2024) {
+  if ((name === 'taylor swift' || name === 'taylorswift') && ((selectedDay === 30 && selectedMonth === 5) || (selectedDay === 17 && selectedMonth === 7)) && selectedYear === 2024) {
     buttonToggle.textContent = '🔓';
     buttonToggle.style.border = 'solid 3px green';
     buttonToggle.style.boxShadow = '0 0 15px rgb(0, 255, 0)';
@@ -328,6 +341,7 @@ function checkInputAndDate() {
       containerCard.classList.add('fade-out-effect');
       newMessageDiv.classList.remove('hidden-element');
       newMessageDiv.classList.add('fade-in-effect');
+      goFullScreen();
     }, 1500); // Wait for fade out to complete
   } else {
     buttonToggle.classList.add('lock'); // Add the lock class
