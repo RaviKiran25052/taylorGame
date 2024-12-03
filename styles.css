@@ -350,12 +350,25 @@ body {
 	font-size: 28px;
 	cursor: pointer;
 	z-index: 2;
-	box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+	transition: box-shadow 0.3s ease-in;
+	animation: blinking-white-shadow 1.5s infinite;
 }
 
 .lock-button-toggle:hover {
-	box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+	animation: none;
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.7) !important;
 }
+@keyframes blinking-white-shadow {
+	0% {
+	  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+	}
+	50% {
+	  box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+	}
+	100% {
+	  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+	}
+ }
 
 .card-glass {
 	position: relative;

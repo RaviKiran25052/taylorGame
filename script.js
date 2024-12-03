@@ -262,10 +262,12 @@ const newMessageDiv = document.getElementById('main-container');
 let isOpen = false;
 
 buttonToggle.addEventListener('click', () => {
+  buttonToggle.style.animation = 'none';
   if (!isOpen) {
     cardGlass.style.height = '350px';
     cardGlass.querySelector('.card-text-content').style.opacity = '1';
   } else {
+    buttonToggle.style.animation = 'blinking-white-shadow 1.5s infinite';
     cardGlass.style.height = '0';
     cardGlass.querySelector('.card-text-content').style.opacity = '0';
   }
