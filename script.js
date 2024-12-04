@@ -249,11 +249,11 @@ function calculateMonthsAndDays(startDate, endDate) {
 }
 
 const today = new Date();
-const startDate = "2024-05-30";
+const startDate = "2024-05-31";
 const result = calculateMonthsAndDays(startDate, today);
 
 // Set the value in the HTML element
-document.getElementById("duration").textContent = `${result.months} months ${result.days} days,`;
+document.getElementById("duration").textContent = `${result.months}, months ${result.days} days`;
 
 const containerCard = document.querySelector('.container-card');
 const buttonToggle = document.getElementById('toggleButton');
@@ -330,7 +330,7 @@ function checkInputAndDate() {
   const selectedMonth = parseInt(monthSelect.value);
   const selectedYear = parseInt(yearSelect.value);
 
-  if ((name === 'taylor swift' || name === 'taylorswift') && ((selectedDay === 30 && selectedMonth === 5) || (selectedDay === 17 && selectedMonth === 7)) && selectedYear === 2024) {
+  if ((name === 'taylor swift' || name === 'taylorswift') && ((selectedDay === 31 && selectedMonth === 5) || (selectedDay === 17 && selectedMonth === 7)) && selectedYear === 2024) {
     buttonToggle.textContent = '🔓';
     buttonToggle.style.border = 'solid 3px green';
     buttonToggle.style.boxShadow = '0 0 15px rgb(0, 255, 0)';
