@@ -20,6 +20,18 @@ function goFullScreen() {
   }
 }
 
+const popupCard = document.getElementById('popupCard');
+const overlayContainer = document.getElementById('overlayContainer');
+
+overlayContainer.addEventListener('click', () => {
+  popupCard.style.animation = 'fadeOut 1s forwards';
+
+  setTimeout(() => {
+    popupCard.style.display = 'none';
+    overlayContainer.style.display = 'none';
+  }, 1000);
+});
+
 // Track the revealed key words
 let revealedCount = 0;
 
@@ -334,17 +346,14 @@ function checkInputAndDate() {
     buttonToggle.textContent = '🔓';
     buttonToggle.style.border = 'solid 3px green';
     buttonToggle.style.boxShadow = '0 0 15px rgb(0, 255, 0)';
+    containerCard.style.opacity = 0;
     setTimeout(() => {
-      containerCard.style.opacity = 0;
-    }, 500);
+      containerCard.style.display = 'none';
+      document.getElementById('overlayContainer').style.display = 'flex';
+    }, 1000);
+
 
     // After fade out is complete, show the new message
-    setTimeout(() => {
-      containerCard.classList.add('fade-out-effect');
-      newMessageDiv.classList.remove('hidden-element');
-      newMessageDiv.classList.add('fade-in-effect');
-      goFullScreen();
-    }, 1500); // Wait for fade out to complete
   } else {
     buttonToggle.classList.add('lock'); // Add the lock class
     setTimeout(() => {
@@ -361,6 +370,21 @@ function checkInputAndDate() {
     }, 1000);
   }
 }
+
+document.getElementById('start-button').addEventListener('click', () => {
+  document.getElementById('popupCard').style.animation = 'fadeOut 1s forwards';
+
+  setTimeout(() => {
+    document.getElementById('popupCard').style.display = 'none';
+    document.getElementById('overlayContainer').style.display = 'none';
+  }, 1000);
+  setTimeout(() => {
+    containerCard.classList.add('fade-out-effect');
+    newMessageDiv.classList.remove('hidden-element');
+    newMessageDiv.classList.add('fade-in-effect');
+    goFullScreen();
+  }, 1500);
+});
 
 submitButton.addEventListener('click', () => {
   checkInputAndDate();
