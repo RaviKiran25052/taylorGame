@@ -253,7 +253,7 @@ const startDate = "2024-05-31";
 const result = calculateMonthsAndDays(startDate, today);
 
 // Set the value in the HTML element
-document.getElementById("duration").textContent = `${result.months}, months ${result.days} days`;
+document.getElementById("duration").textContent = `${result.months} months, ${result.days} days`;
 
 const containerCard = document.querySelector('.container-card');
 const buttonToggle = document.getElementById('toggleButton');
