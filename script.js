@@ -184,7 +184,7 @@ function init() {
   captureIndex = 0;
 
   // create a large number of slightly complex vector shapes, and give them random positions and velocities:
-  for (var i = 0; i < 150; i++) {
+  for (var i = 0; i < 250; i++) {
     var heart = new createjs.Shape();
     heart.graphics.beginFill(createjs.Graphics.getHSL(330 + Math.random() * 30, 50 + Math.random() * 30, 75 + Math.random() * 10));
     // heart.graphics.beginFill(createjs.Graphics.getHSL(330 + Math.random() * 30, 50 + Math.random() * 30, 75 + Math.random() * 10));
