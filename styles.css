@@ -549,9 +549,9 @@ body {
 
 .swiftieTitle {
 	background: linear-gradient(120deg, 
-	  #ff59de 20%, 
-	  #7c00a5 50%, 
-	  #ff59de 80%);
+		#ff59de 20%, 
+		#7c00a5 50%, 
+		#ff59de 80%);
 	background-size: 200%;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
