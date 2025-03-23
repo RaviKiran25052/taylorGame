@@ -260,8 +260,8 @@ function calculateMonthsAndDays(startDate, endDate) {
   return { months, days };
 }
 
-const today = new Date();
-const startDate = "2024-05-31";
+const today = "2025-02-14";
+const startDate = "2024-07-17";
 const result = calculateMonthsAndDays(startDate, today);
 
 // Set the value in the HTML element
