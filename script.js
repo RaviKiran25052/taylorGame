@@ -310,7 +310,7 @@ months.forEach((month, index) => {
 });
 
 const currentYear = new Date().getFullYear();
-for (let i = currentYear; i >= currentYear - 1; i--) {
+for (let i = currentYear; i >= 2023; i--) {
   const option = document.createElement("option");
   option.value = i;
   option.textContent = i;
@@ -388,4 +388,5 @@ document.getElementById('start-button').addEventListener('click', () => {
 
 submitButton.addEventListener('click', () => {
   checkInputAndDate();
+
 });
